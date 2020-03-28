@@ -1,6 +1,7 @@
 const express = require('express');
 const nodeMailer = require('nodemailer');
 const bodyParser = require('body-parser');
+require('dotenv').config()
 const cors = require('cors');
 
 const app = express();
@@ -10,8 +11,8 @@ const transport = {
   host: 'mail.oleg-dev.com',
   secure: true,
   auth: {
-    user: 'alphamarineupholstery@gmail.com',
-    pass: 'We@reAlpha1!',
+    user: process.env.USER_NAME,
+    pass: process.env.USER_PASS,
   },
   // port: 465,
   // tls: {
